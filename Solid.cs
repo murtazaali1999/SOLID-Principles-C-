@@ -197,5 +197,66 @@ namespace Solid
 
 
 
+    /*
+    
+    Interface-1
+    
+    inheriting
+    Interface-2
+
+    inheriting 
+    Inherface-3
+    */
+
+
+    interface Character {
+        public void attack();
+        public void defend();
+        public void heal();
+        public void escape();
+    }
+
+    interface Minion {
+        public void heal();
+    }
+
+    interface Hero:Character {
+        public void droid_attack();
+        public void vehicle();
+    }
+
+    interface HeroMinion:Hero:Minion {
+        public void rechargeDroid();
+    }
+
+    interface Villan:Character {
+        public void spell();
+        public void disappear();
+    }
+
+    interface VillanMinion:Villan:Minion{
+        public void replenishSpell();
+    }
+
+    class H_Minon:HeroMinion{
+       public string Type{
+        get;
+        set;
+       };
+
+       public int Effect{
+        get;
+        set;
+       };
+
+       public void heal(){}
+       public void rechargeDroid(){}
+       public void droid_attack(){}
+       public void vehicle(){}
+       public void attack(){}
+       public void defend(){}
+       public void heal(){}
+       public void escape(){}
+    }
 
 }
